@@ -1,0 +1,15 @@
+# Node
+node_modules/
+.env
+*.log
+
+# Remix build output
+/public/build/
+/build/
+
+# MacOS / Linux / Windows
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
