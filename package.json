@@ -7,10 +7,15 @@
     "build": "remix build",
     "start": "node server.js"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "dependencies": {
     "@remix-run/node": "^2.15.3",
     "@remix-run/react": "^2.15.3",
     "@remix-run/serve": "^2.15.3",
+    "@remix-run/dev": "2.15.3",
+    "@remix-run/express": "2.15.3",
     "@vercel/remix": "^2.15.3",
     "autoprefixer": "^10.0.0",
     "isbot": "^4",
