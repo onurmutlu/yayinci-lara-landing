@@ -1,5 +1,5 @@
-
 import { useState, useEffect } from "react";
+import "./PurchaseCreditsPopup.css"; // Import the CSS file
 
 function generateLicenseCode(type) {
   const suffix = Math.random().toString(36).substring(2, 8).toUpperCase();
@@ -34,7 +34,7 @@ function PurchaseCreditsPopup({ onLicenseCodeSubmit, currentCredit }) {
         setLicenseFeedback(`✅ ${amount} token başarıyla yüklendi!`);
         setLicenseCode("");
       } else {
-        setLicenseFeedback("❌ Geçersiz lisans türü.");
+        setLicenseFeedback("❌ Geçersiz lisans türü.`);
       }
     } else {
       setLicenseFeedback("❌ Lisans kodu formatı hatalı.");
