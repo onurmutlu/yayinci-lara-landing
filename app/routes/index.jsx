@@ -1,3 +1,4 @@
+import React from react;
 import { PurchaseCreditsPopup } from "../components/PurchaseCreditsPopup";
 
 export default function Index() {

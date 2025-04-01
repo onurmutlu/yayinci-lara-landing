@@ -144,12 +144,55 @@ var root_exports = {};
 __export(root_exports, {
   default: () => App
 });
-var import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
-function App({ children }) {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children }, void 0, !1, {
+var import_react2 = require("@remix-run/react"), import_jsx_dev_runtime2 = require("react/jsx-dev-runtime");
+function App() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("html", { lang: "en", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("head", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Meta, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 14,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Links, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 15,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.jsx",
+      lineNumber: 13,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("body", { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Outlet, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 18,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.ScrollRestoration, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 19,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.Scripts, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 20,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_react2.LiveReload, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 21,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.jsx",
+      lineNumber: 17,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
     fileName: "app/root.jsx",
-    lineNumber: 4,
-    columnNumber: 10
+    lineNumber: 12,
+    columnNumber: 5
   }, this);
 }
 
@@ -158,12 +201,13 @@ var routes_exports = {};
 __export(routes_exports, {
   default: () => Index
 });
+var import_react4 = require("react");
 
 // app/components/PurchaseCreditsPopup.jsx
-var import_react2 = require("react"), import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
+var import_react3 = require("react"), import_jsx_dev_runtime3 = require("react/jsx-dev-runtime");
 function PurchaseCreditsPopup({ onLicenseCodeSubmit, currentCredit }) {
-  let [licenseCode, setLicenseCode] = (0, import_react2.useState)(""), [licenseFeedback, setLicenseFeedback] = (0, import_react2.useState)(""), [showLowTokenWarning, setShowLowTokenWarning] = (0, import_react2.useState)(!1);
-  return (0, import_react2.useEffect)(() => {
+  let [licenseCode, setLicenseCode] = (0, import_react3.useState)(""), [licenseFeedback, setLicenseFeedback] = (0, import_react3.useState)(""), [showLowTokenWarning, setShowLowTokenWarning] = (0, import_react3.useState)(!1);
+  return (0, import_react3.useEffect)(() => {
     setShowLowTokenWarning(currentCredit !== void 0 && currentCredit < 20);
   }, [currentCredit]), /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { children: showLowTokenWarning && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("div", { className: "token-warning-modal", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("h2", { children: "Token Y\xFCkleme" }, void 0, !1, {
@@ -227,32 +271,32 @@ function Index() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "min-h-screen bg-black text-white flex flex-col items-center justify-center p-10", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("h1", { className: "text-4xl font-bold text-purple-300", children: "YAYINCI-LARA" }, void 0, !1, {
       fileName: "app/routes/index.jsx",
-      lineNumber: 6,
+      lineNumber: 7,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("p", { className: "text-gray-400 mt-4 text-center max-w-xl", children: "GPT destekli i\xE7erik \xF6nerileriyle yay\u0131nc\u0131lara otomatik Telegram y\xF6netimi sunan ak\u0131ll\u0131 kontrol paneli." }, void 0, !1, {
       fileName: "app/routes/index.jsx",
-      lineNumber: 7,
+      lineNumber: 8,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)("div", { className: "mt-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime4.jsxDEV)(PurchaseCreditsPopup, { onLicenseCodeSubmit: (amount) => alert(`Token: ${amount}`), currentCredit: 10 }, void 0, !1, {
       fileName: "app/routes/index.jsx",
-      lineNumber: 11,
+      lineNumber: 12,
       columnNumber: 9
     }, this) }, void 0, !1, {
       fileName: "app/routes/index.jsx",
-      lineNumber: 10,
+      lineNumber: 11,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/index.jsx",
-    lineNumber: 5,
+    lineNumber: 6,
     columnNumber: 5
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-DTCZ7VBX.js", imports: ["/build/_shared/chunk-QVAHHNNO.js", "/build/_shared/chunk-O4BRYNJ4.js", "/build/_shared/chunk-XGOTYLZ5.js", "/build/_shared/chunk-U4FRFQSK.js", "/build/_shared/chunk-7M6SC7J5.js", "/build/_shared/chunk-5HSLDJTJ.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-HM6I5T5K.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-CQYNJQUI.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "7def0e1d", hmr: { runtime: "/build/_shared/chunk-5HSLDJTJ.js", timestamp: 1743043280764 }, url: "/build/manifest-7DEF0E1D.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-K5F6PQ5B.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-NUISLGAS.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-5HSLDJTJ.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WEWWKJ7B.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-CBCVNSKY.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "99d4ff3f", hmr: { runtime: "/build/_shared/chunk-5HSLDJTJ.js", timestamp: 1743115429013 }, url: "/build/manifest-99D4FF3F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !0, v3_relativeSplatPath: !0, v3_throwAbortReason: !0, v3_routeConfig: !1, v3_singleFetch: !0, v3_lazyRouteDiscovery: !0, unstable_optimizeDeps: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
