@@ -1,7 +1,11 @@
 /** @type {import('@remix-run/dev').AppConfig} */
 module.exports = {
+  serverBuildTarget: "vercel",
+  server: process.env.NODE_ENV === "development" ? undefined : "./server.mjs",
   ignoredRouteFiles: ["**/.*"],
-  serverModuleFormat: "esm",
+  publicPath: "/build/",
+  assetsBuildDirectory: "public/build",
+  serverBuildPath: "build/index.js",
   tailwind: true,
   future: {
     v3_fetcherPersist: true,
