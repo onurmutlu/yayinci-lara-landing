@@ -34,7 +34,7 @@ function PurchaseCreditsPopup({ onLicenseCodeSubmit, currentCredit }) {
         setLicenseFeedback(`✅ ${amount} token başarıyla yüklendi!`);
         setLicenseCode("");
       } else {
-        setLicenseFeedback("❌ Geçersiz lisans türü.`);
+        setLicenseFeedback("❌ Geçersiz lisans türü.");
       }
     } else {
       setLicenseFeedback("❌ Lisans kodu formatı hatalı.");
