@@ -8,8 +8,9 @@
   <style>
     body {
       margin: 0;
-      padding: 1rem;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      overflow: hidden;
+      font-family: sans-serif;
       background: #111;
       color: white;
       display: flex;
@@ -33,14 +34,21 @@
       padding: 1rem;
       border-radius: 1rem;
     }
+    #container {
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
-  <header>Telegram Auto Message Bot Gelişmiş Yönetimi</header>
-  <div class="icons">
-    <div class="icon">⚙️</div>
-    <div class="icon">📊</div>
-    <div class="icon">🧑‍💼</div>
+  <div id="container">
+    <header>Telegram Auto Message Bot Gelişmiş Yönetimi</header>
+      <div class="icons">
+        <div class="icon">⚙️</div>
+        <div class="icon">📊</div>
+        <div class="icon">🧑‍💼</div>
+      </div>
   </div>
 </body>
 </html>
