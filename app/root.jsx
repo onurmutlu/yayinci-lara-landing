@@ -7,10 +7,12 @@ import {
   ScrollRestoration
 } from "@remix-run/react";
 
-import styles from "./tailwind.css";
+// Bu satırı kaldırın:
+// import styles from "./tailwind.css";
 
+// Ve links fonksiyonunu da değiştirin:
 export const links = () => [
-  { rel: "stylesheet", href: styles }
+  // { rel: "stylesheet", href: styles }
 ];
 
 export default function App() {
