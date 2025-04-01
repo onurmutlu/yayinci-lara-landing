@@ -1,0 +1,85 @@
+import React from "react";
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  useMatches,
+  useRouteError,
+} from "@remix-run/react";
+
+import tailwindStylesheetUrl from "./styles/tailwind.css";
+
+export const links = () => {
+  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
+};
+
+export default function App() {
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Outlet />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  console.error(error);
+
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+        <title>Error!</title>
+      </head>
+      <body>
+        <div>
+          <h1>There was an error!</h1>
+          <p>
+            {error instanceof Error ? error.message : error}
+          </p>
+        </div>
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export function CatchBoundary() {
+  const caught = useMatches();
+
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+        <title>Oops!</title>
+      </head>
+      <body>
+        <div>
+          <h1>
+            {caught.status} {caught.statusText}
+          </h1>
+          <p>
+            {caught.data?.message || "Something went wrong."}
+          </p>
+        </div>
+        <Scripts />
+      </body>
+    </html>
+  );
+}

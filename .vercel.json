@@ -8,8 +8,12 @@
   ],
   "routes": [
     {
+      "src": "/panel",
+      "dest": "/routes/panel"
+    },
+    {
       "src": "/(.*)",
-      "dest": "server.js"
+      "dest": "/"
     }
   ]
 }
