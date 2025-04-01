@@ -1,7 +1,6 @@
-// CommonJS wrapper for the ES module build file
-const path = require('path');
-const { createRequire } = require('module');
-const require = createRequire(import.meta.url);
+// filepath: /Users/siyahkare/code/yayinci-lara-remix-fixed/server.mjs
+import path from 'path';
+import { createRequire } from 'module';
 
 // Dynamically import the ES module
 import('./build/index.js')
