@@ -7,6 +7,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Siyah Kare Panel</title>
+        <link rel="stylesheet" href="/styles/global.css" />
       </head>
       <body>
         <Outlet />

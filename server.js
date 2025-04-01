@@ -1,20 +1,13 @@
-const { createRequestHandler } = require("@remix-run/express");
-const express = require("express");
-const path = require("path");
+// CommonJS wrapper for the ES module build file
+const path = require('path');
+const { createRequire } = require('module');
+const require = createRequire(import.meta.url);
 
-const app = express();
-app.use(express.static("public"));
-
-app.all(
-  "*",
-  createRequestHandler({
-    getLoadContext() {
-      return {};
-    },
+// Dynamically import the ES module
+import('./build/index.js')
+  .then(buildModule => {
+    console.log('Server started successfully');
   })
-);
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+  .catch(error => {
+    console.error('Failed to start server:', error);
+  });
