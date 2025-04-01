@@ -1,12 +1,7 @@
-// filepath: /Users/siyahkare/code/yayinci-lara-remix-fixed/server.mjs
-import path from 'path';
-import { createRequire } from 'module';
+import { createRequestHandler } from "@remix-run/vercel";
+import * as build from "./build/index.js";
 
-// Dynamically import the ES module
-import('./build/index.js')
-  .then(buildModule => {
-    console.log('Server started successfully');
-  })
-  .catch(error => {
-    console.error('Failed to start server:', error);
-  });
+export default createRequestHandler({
+  build,
+  mode: process.env.NODE_ENV
+});
