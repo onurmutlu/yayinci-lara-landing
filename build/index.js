@@ -118,50 +118,78 @@ function handleBrowserRequest(request, responseStatusCode, responseHeaders, remi
 // app/root.jsx
 var root_exports = {};
 __export(root_exports, {
-  default: () => App
+  default: () => App,
+  links: () => links
 });
-import { Outlet } from "@remix-run/react";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration
+} from "@remix-run/react";
 import { jsxDEV as jsxDEV2 } from "react/jsx-dev-runtime";
+var links = () => [
+  // { rel: "stylesheet", href: styles }
+];
 function App() {
-  return /* @__PURE__ */ jsxDEV2("html", { lang: "en", children: [
+  return /* @__PURE__ */ jsxDEV2("html", { lang: "tr", children: [
     /* @__PURE__ */ jsxDEV2("head", { children: [
       /* @__PURE__ */ jsxDEV2("meta", { charSet: "utf-8" }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 7,
+        lineNumber: 22,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDEV2("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
+      /* @__PURE__ */ jsxDEV2("meta", { name: "viewport", content: "width=device-width,initial-scale=1" }, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 8,
+        lineNumber: 23,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDEV2("title", { children: "Siyah Kare Panel" }, void 0, !1, {
+      /* @__PURE__ */ jsxDEV2(Meta, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 9,
+        lineNumber: 24,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ jsxDEV2("link", { rel: "stylesheet", href: "/styles/global.css" }, void 0, !1, {
+      /* @__PURE__ */ jsxDEV2(Links, {}, void 0, !1, {
         fileName: "app/root.jsx",
-        lineNumber: 10,
+        lineNumber: 25,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
       fileName: "app/root.jsx",
-      lineNumber: 6,
+      lineNumber: 21,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ jsxDEV2("body", { children: /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
+    /* @__PURE__ */ jsxDEV2("body", { children: [
+      /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 28,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(ScrollRestoration, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 29,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Scripts, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 30,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(LiveReload, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 31,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
       fileName: "app/root.jsx",
-      lineNumber: 13,
-      columnNumber: 9
-    }, this) }, void 0, !1, {
-      fileName: "app/root.jsx",
-      lineNumber: 12,
+      lineNumber: 27,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/root.jsx",
-    lineNumber: 5,
+    lineNumber: 20,
     columnNumber: 5
   }, this);
 }
@@ -184,6 +212,26 @@ function Index() {
       fileName: "app/routes/index.jsx",
       lineNumber: 7,
       columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV3("div", { className: "mt-8", children: /* @__PURE__ */ jsxDEV3(
+      "a",
+      {
+        href: "/panel",
+        className: "bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded",
+        children: "Kontrol Paneline Git"
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/index.jsx",
+        lineNumber: 11,
+        columnNumber: 9
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/index.jsx",
+      lineNumber: 10,
+      columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/index.jsx",
@@ -195,40 +243,110 @@ function Index() {
 // app/routes/panel.jsx
 var panel_exports = {};
 __export(panel_exports, {
-  default: () => Panel,
-  loader: () => loader
+  default: () => Panel
 });
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import "react";
 import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
-async function loader() {
-  return json({ message: "Y\xF6netim ekran\u0131na ho\u015F geldiniz." });
-}
 function Panel() {
-  let data = useLoaderData();
-  return /* @__PURE__ */ jsxDEV4("div", { style: { padding: 20 }, children: [
-    /* @__PURE__ */ jsxDEV4("h1", { children: "Telegram Bot Paneli" }, void 0, !1, {
+  return /* @__PURE__ */ jsxDEV4("div", { className: "min-h-screen bg-gray-900 text-white p-10", children: [
+    /* @__PURE__ */ jsxDEV4("h1", { className: "text-3xl font-bold mb-6", children: "Kontrol Paneli" }, void 0, !1, {
       fileName: "app/routes/panel.jsx",
-      lineNumber: 12,
+      lineNumber: 6,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ jsxDEV4("p", { children: data.message }, void 0, !1, {
+    /* @__PURE__ */ jsxDEV4("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6", children: [
+      /* @__PURE__ */ jsxDEV4("div", { className: "bg-gray-800 p-6 rounded-lg", children: [
+        /* @__PURE__ */ jsxDEV4("h2", { className: "text-xl font-semibold mb-4", children: "Telegram Bot Y\xF6netimi" }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 10,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV4("p", { className: "text-gray-400 mb-4", children: "Bot ayarlar\u0131n\u0131z\u0131 yap\u0131land\u0131r\u0131n ve mesaj g\xF6nderin." }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 11,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV4(
+          "a",
+          {
+            href: "/telegram_menu.html",
+            target: "_blank",
+            className: "inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded",
+            children: "Bot Paneli"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/routes/panel.jsx",
+            lineNumber: 12,
+            columnNumber: 11
+          },
+          this
+        )
+      ] }, void 0, !0, {
+        fileName: "app/routes/panel.jsx",
+        lineNumber: 9,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV4("div", { className: "bg-gray-800 p-6 rounded-lg", children: [
+        /* @__PURE__ */ jsxDEV4("h2", { className: "text-xl font-semibold mb-4", children: "\u0130\xE7erik \xDCretimi" }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 22,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV4("p", { className: "text-gray-400 mb-4", children: "GPT destekli i\xE7erik \xF6nerileri al\u0131n." }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 23,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV4("button", { className: "bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded", children: "\u0130\xE7erik Olu\u015Ftur" }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 24,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/panel.jsx",
+        lineNumber: 21,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV4("div", { className: "bg-gray-800 p-6 rounded-lg", children: [
+        /* @__PURE__ */ jsxDEV4("h2", { className: "text-xl font-semibold mb-4", children: "Ayarlar" }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 30,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV4("p", { className: "text-gray-400 mb-4", children: "Sistem ayarlar\u0131n\u0131z\u0131 yap\u0131land\u0131r\u0131n." }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 31,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV4("button", { className: "bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded", children: "Ayarlar\u0131 D\xFCzenle" }, void 0, !1, {
+          fileName: "app/routes/panel.jsx",
+          lineNumber: 32,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/routes/panel.jsx",
+        lineNumber: 29,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
       fileName: "app/routes/panel.jsx",
-      lineNumber: 13,
+      lineNumber: 8,
       columnNumber: 7
     }, this)
   ] }, void 0, !0, {
     fileName: "app/routes/panel.jsx",
-    lineNumber: 11,
+    lineNumber: 5,
     columnNumber: 5
   }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-MK4DPPFG.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-2MYUCU7P.js", "/build/_shared/chunk-5HSLDJTJ.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-3QISONS3.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-WPV3GINP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/panel": { id: "routes/panel", parentId: "root", path: "panel", index: void 0, caseSensitive: void 0, module: "/build/routes/panel-6B3JQP46.js", imports: void 0, hasAction: !1, hasLoader: !0, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "5af19666", hmr: { runtime: "/build/_shared/chunk-5HSLDJTJ.js", timestamp: 1743536335779 }, url: "/build/manifest-5AF19666.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-MK4DPPFG.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-2MYUCU7P.js", "/build/_shared/chunk-5HSLDJTJ.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-M6QQDY6U.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/index": { id: "routes/index", parentId: "root", path: "index", index: void 0, caseSensitive: void 0, module: "/build/routes/index-O6Q2NIUT.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/panel": { id: "routes/panel", parentId: "root", path: "panel", index: void 0, caseSensitive: void 0, module: "/build/routes/panel-FC6O53XJ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "dce6dd1c", hmr: { runtime: "/build/_shared/chunk-5HSLDJTJ.js", timestamp: 1743551102803 }, url: "/build/manifest-DCE6DD1C.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !0, v3_relativeSplatPath: !0, v3_throwAbortReason: !0, v3_routeConfig: !1, v3_singleFetch: !0, v3_lazyRouteDiscovery: !0, unstable_optimizeDeps: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
+var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1, v3_throwAbortReason: !1, v3_routeConfig: !1, v3_singleFetch: !1, v3_lazyRouteDiscovery: !1, unstable_optimizeDeps: !1 }, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
