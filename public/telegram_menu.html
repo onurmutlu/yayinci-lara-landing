@@ -169,7 +169,7 @@
     
     .message-time {
       font-size: 0.8rem;
-      color: var(--secondary-text);
+      color: var (--secondary-text);
     }
     
     .message-text {
@@ -372,6 +372,21 @@
       console.log("Telegram Web App SDK yüklenemedi:", e);
     }
     
+    // Kullanıcı bilgilerini almak
+    const user = tg.initDataUnsafe.user;
+
+    // QR kod tarama
+    tg.showScanQrPopup({text: "QR kodu tarayın"}, function(text) {
+      alert('Taranan kod: ' + text);
+    });
+
+    // Ana düğmeyi gösterme
+    tg.MainButton.setText('Gönder');
+    tg.MainButton.show();
+    tg.MainButton.onClick(function() {
+      // Düğme tıklama işlemleri
+    });
+
     // Tab değiştirme işlevi
     document.querySelectorAll('.tab, .menu-item').forEach(tab => {
       tab.addEventListener('click', () => {
@@ -395,35 +410,23 @@
     });
     
     // Mesaj gönderme
-    document.getElementById('send-message').addEventListener('click', () => {
-      const messageType = document.getElementById('message-type').value;
+    document.getElementById('send-message').addEventListener('click', async () => {
       const messageContent = document.getElementById('message-content').value;
-      const scheduleTime = document.getElementById('schedule-time').value;
       
-      if (!messageContent.trim()) {
-        alert('Lütfen bir mesaj içeriği girin.');
-        return;
+      // Gerçek API çağrısı
+      const response = await fetch('/api/send-message', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          message: messageContent,
+          chatId: tg.initDataUnsafe.user.id
+        })
+      });
+      
+      const result = await response.json();
+      if (result.success) {
+        tg.showPopup("Mesaj gönderildi!");
       }
-      
-      // API çağrısı simülasyonu
-      setTimeout(() => {
-        alert('Mesaj başarıyla gönderildi!');
-        document.getElementById('message-content').value = '';
-        
-        // Mesajlar listesine ekleme
-        const messageList = document.querySelector('.message-list');
-        const now = new Date();
-        const timeString = `Bugün, ${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}`;
-        
-        const newMessage = document.createElement('div');
-        newMessage.classList.add('message-item');
-        newMessage.innerHTML = `
-          <div class="message-time">${timeString}</div>
-          <div class="message-text">${messageContent}</div>
-        `;
-        
-        messageList.insertBefore(newMessage, messageList.firstChild);
-      }, 1000);
     });
     
     // Ayarları kaydet
@@ -444,6 +447,16 @@
       setTimeout(() => {
         alert('API bağlantısı başarılı!');
       }, 1000);
+    });
+
+    // Telegram temasını algılama
+    const colorScheme = tg.colorScheme;
+    document.body.classList.add(colorScheme); // 'dark' veya 'light'
+
+    // Tema değişikliğini dinleme
+    tg.onEvent('themeChanged', function() {
+      document.body.className = '';
+      document.body.classList.add(tg.colorScheme);
     });
   </script>
 </body>
